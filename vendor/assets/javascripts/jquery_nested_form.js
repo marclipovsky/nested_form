@@ -45,6 +45,8 @@ jQuery(function($) {
       $(link).closest("form")
         .trigger({ type: 'nested:fieldAdded', field: field })
         .trigger({ type: 'nested:fieldAdded:' + assoc, field: field });
+      $(this).prev('.fields').find("input[type=text]:visible").val('Untitled');
+      $(this).prev('.fields').find("input[type=text]:visible").select();
       return false;
     },
     insertFields: function(content, assoc, link) {
